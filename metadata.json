@@ -1,0 +1,7 @@
+{
+  "name": "SnapStudio AI",
+  "description": "A high-end product photo editor that uses Gemini 2.5 Flash Image to remove backgrounds, clean up distractions, and enhance product shots using simple natural language instructions.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
