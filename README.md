@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ✨ SnapStudio AI
 
-# Run and deploy your AI Studio app
+**SnapStudio AI** is a high-end product photography editor powered by the latest **Gemini 2.5 and 3.0** models. It allows e-commerce sellers, creators, and photographers to transform raw product shots into professional studio-quality assets using simple natural language instructions.
 
-This contains everything you need to run your app locally.
+## 🚀 Key Features
 
-View your app in AI Studio: https://ai.studio/apps/drive/1KSU7sASNnIcCi2cIP691U1P4SnyV2Qds
+- **Multi-Model Redundancy**: Intelligent fallback system that automatically switches between `Gemini 2.5 Flash Image` and `Gemini 3 Pro Image` if quota limits are reached.
+- **Professional Mode**: Allows users to select their own paid API key to bypass free tier quotas and access higher resolution processing.
+- **Background Removal & Replacement**: Instantly isolate products or place them in premium studio environments.
+- **Natural Language Editing**: Type instructions like "Add a soft shadow" or "Make the lighting more dramatic".
+- **Real-time Comparison**: Interactive slider to compare your original shot with the AI-enhanced version.
 
-## Run Locally
+## 🛠️ Tech Stack
 
-**Prerequisites:**  Node.js
+- **Frontend**: React 19 + TypeScript
+- **Styling**: Tailwind CSS
+- **AI Engine**: Google Gemini Multimodal Models
+- **Build Tool**: Vite
 
+## ⚙️ Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Environment Variables
+
+To run the app, you need a `API_KEY` in your environment. For production (Vercel), add `API_KEY` to your Project Settings.
+
+```env
+API_KEY=your_gemini_api_key_here
+```
+
+### Quota Management
+
+If you encounter a `429 Quota Exceeded` error, SnapStudio will try to use secondary models automatically. If all models are exhausted, use the **Professional Mode** button in the sidebar to provide a billing-enabled key from your Google Cloud project.
+
+## 📄 License
+
+MIT
