@@ -10,7 +10,7 @@ export default defineConfig({
     emptyOutDir: true,
   },
   define: {
-    'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || ''),
   },
   server: {
     port: 3000
