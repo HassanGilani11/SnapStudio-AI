@@ -32,7 +32,7 @@
         }
     </style>
     <script>
-      // Shim process.env for browser compatibility in production environments
+      // Shim process.env for browser compatibility in case of missing injection
       window.process = window.process || { env: { API_KEY: '' } };
     </script>
 <script type="importmap">
