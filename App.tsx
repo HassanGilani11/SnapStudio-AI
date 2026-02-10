@@ -1,9 +1,9 @@
 
 import React, { useState, useCallback } from 'react';
-import EditorSidebar from './components/EditorSidebar';
-import ImageDisplay from './components/ImageDisplay';
-import { geminiService } from './services/geminiService';
-import { ImageState } from './types';
+import EditorSidebar from './components/EditorSidebar.tsx';
+import ImageDisplay from './components/ImageDisplay.tsx';
+import { geminiService } from './services/geminiService.ts';
+import { ImageState } from './types.ts';
 
 const App: React.FC = () => {
   const [imageState, setImageState] = useState<ImageState>({
@@ -37,7 +37,6 @@ const App: React.FC = () => {
     setError(null);
 
     try {
-      // Use the edited image as base if it exists, otherwise use original
       const sourceImage = imageState.edited || imageState.original;
       const result = await geminiService.editImage(sourceImage, prompt);
       

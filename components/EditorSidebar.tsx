@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Preset } from '../types';
+import { Preset } from '../types.ts';
 
 const PRESETS: Preset[] = [
   { id: 'nobg', label: 'Remove Background', prompt: 'Completely remove the background and make it transparent or pure white.', icon: '✨' },
