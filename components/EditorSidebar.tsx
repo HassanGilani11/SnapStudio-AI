@@ -28,7 +28,7 @@ const EditorSidebar: React.FC<Props> = ({ onEdit, isProcessing, hasImage }) => {
   };
 
   return (
-    <div className="w-full md:w-80 h-full flex flex-col p-6 space-y-8 border-r border-white/10 bg-[#0f0f0f]">
+    <div className="w-full md:w-80 h-full flex flex-col p-6 space-y-8 border-r border-white/10 bg-[#0f0f0f] overflow-hidden">
       <div>
         <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-1">
           SnapStudio AI
@@ -44,7 +44,7 @@ const EditorSidebar: React.FC<Props> = ({ onEdit, isProcessing, hasImage }) => {
             onChange={(e) => setCustomPrompt(e.target.value)}
             placeholder="e.g., Change background to a marble table..."
             disabled={!hasImage || isProcessing}
-            className="w-full h-32 bg-white/5 border border-white/10 rounded-xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 resize-none transition-all disabled:opacity-50"
+            className="w-full h-24 bg-white/5 border border-white/10 rounded-xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 resize-none transition-all disabled:opacity-50"
           />
           <button
             type="submit"
