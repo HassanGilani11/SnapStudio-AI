@@ -2,17 +2,17 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 
 export class GeminiService {
-  private ai: GoogleGenAI;
-
-  constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  private get ai() {
+    // This follows the rule: API key must be obtained exclusively from process.env.API_KEY
+    return new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
   }
 
   async editImage(base64Image: string, prompt: string): Promise<string> {
+    const ai = this.ai;
     // Remove metadata prefix if present
     const cleanBase64 = base64Image.split(',')[1] || base64Image;
 
-    const response: GenerateContentResponse = await this.ai.models.generateContent({
+    const response: GenerateContentResponse = await ai.models.generateContent({
       model: 'gemini-2.5-flash-image',
       contents: {
         parts: [
